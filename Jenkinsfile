@@ -6,6 +6,13 @@ pipeline {
            PATH = "$JAVA_HOME/bin:${env.PATH}"
        }
 
+    stage('Check Java') {
+        steps {
+            sh 'java --version'
+            sh 'echo $JAVA_HOME'
+        }
+    }
+    
     stages {
         stage('Build') {
             steps {
