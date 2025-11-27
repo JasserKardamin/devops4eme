@@ -1,14 +1,26 @@
 pipeline {
     agent any
+
     stages {
         stage('Build') {
-            sh 'mvn clean install'
+            steps {
+                echo 'Building the project...'
+                sh 'mvn clean install'
+            }
         }
+
         stage('Test') {
-            sh 'mvn test'
+            steps {
+                echo 'Running tests...'
+                sh 'mvn test'
+            }
         }
+
         stage('Deploy') {
-            sh 'echo "Deploying..."'
+            steps {
+                echo 'Deploying the project...'
+                sh 'echo "Deploy step placeholder"'
+            }
         }
     }
 }
