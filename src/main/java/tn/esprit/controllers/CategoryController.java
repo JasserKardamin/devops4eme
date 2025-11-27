@@ -41,8 +41,6 @@ public class CategoryController {
 
     private void loadCategories() {
         List<Category> categories = categoryService.getAll();
-        List<Category> categorietest = categoryService.getAll();
-        
         ObservableList<Category> observableList = FXCollections.observableArrayList(categories);
         listViewCategories.setItems(observableList);
     }
